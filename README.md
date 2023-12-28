@@ -75,14 +75,17 @@ $ curl http://127.0.0.1:5000/api/v1/note/
 $ curl http://127.0.0.1:5000/api/v1/calendar/ -X POST -d "2022-08-21|title|text"
 new id: 1
 
-$ curl http://127.0.0.1:5000/api/v1/calendar/
+$ curl http://127.0.0.1:5000/api/v1/calendar/ -X GET
 2022-08-21|title|text
 
-$ curl http://127.0.0.1:5000/api/v1/calendar/1/
+$ curl http://127.0.0.1:5000/api/v1/calendar/1/ -X GET
 2022-08-21|title|text
 
 $ curl http://127.0.0.1:5000/api/v1/calendar/1/ -X PUT -d "2023-08-21|new title|new text"
 updated
 
-$ curl http://127.0.0.1:5000/api/v1/calendar/1/
+$ curl http://127.0.0.1:5000/api/v1/calendar/1/ -X GET
 2023-08-21|new title|new text
+
+$ curl http://127.0.0.1:5000/api/v1/calendar/1/ -X DELETE
+deleted
